@@ -1,0 +1,6 @@
+deployment:
+  appengine:
+    branch: master
+    commands:
+      - printf '{"credentials": {"jenkins": {"access_token": "%s", "expiration_time_millis": 2431552739090, "refresh_token": "%s"}}}\n' "$DEPLOYMENT_ACCESS_TOKEN" "$DEPLOYMENT_REFRESH_TOKEN" > ~/.appcfg_oauth2_tokens_java.json
+      - mvn -DskipTests=true appengine:update

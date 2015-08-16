@@ -1,0 +1,17 @@
+{
+  "includeCurrentDay": true,
+  "numberOfDays": 3,
+  "tableSchemas": [
+    {
+      "dataset": "Viewer_Events",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        }
+      ]
+    }
+  ]
+}
