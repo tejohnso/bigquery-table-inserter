@@ -16,9 +16,11 @@ The configuration file specifies one or more table schemas each having one or mo
       "dataset": "Viewer_Events",
       "tableNamePrefix": "events",
       "fields": [
-        "name": "event",
-        "type": "string",
-        "nullable": false
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        }
       ]
     }
   ]
