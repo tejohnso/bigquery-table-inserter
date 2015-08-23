@@ -1,8 +1,9 @@
 {
   "includeCurrentDay": true,
   "numberOfDays": 3,
-  "tableSchemas": [
+  "tables": [
     {
+      "projectId": "client-side-events",
       "dataset": "Viewer_Events",
       "tableNamePrefix": "events",
       "fields": [

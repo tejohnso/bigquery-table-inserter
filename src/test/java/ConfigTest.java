@@ -12,7 +12,6 @@ public class ConfigTest {
 
   @Test
   public void itLoadsConfig() {
-    assertThat(Config.config, notNullValue());
-    assertThat(Config.config.containsKey("tableSchemas"), is(true));
+    assertThat(Config.tables.size() > 0, is(true));
   }
 }

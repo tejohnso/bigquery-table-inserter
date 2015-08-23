@@ -3,12 +3,12 @@ package tejohnso.bigquery;
 import java.util.Map;
 
 class MockTablesApi implements TablesApi {
-  int createTableCallCount = 0;
+  int insertTableCallCount = 0;
   String insertedTableName;
 
-  public int createTable(Map tableInfo) {
-    createTableCallCount += 1;
-    insertedTableName = (String)tableInfo.get("name");
-    return 1;
+  public void insertTable(TableInfo tableInfo) {
+    insertTableCallCount += 1;
+    insertedTableName = tableInfo.name;
+    return;
   }
 }

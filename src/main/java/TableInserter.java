@@ -9,14 +9,18 @@ class TableInserter {
     this.api = api;
   }
 
-  public void insertTables(Map tableConfig) {
-    List schemas = (List)tableConfig.get("tableSchemas");
-    int tableCount = schemas.size();
+  public void insertTables() {
+    int dateOffset = Config.includeCurrentDay ? 0 : 1;
+    int numDaysToInsert = Config.numberOfDays;
 
-    for (int i = 0; i < tableCount; i += 1) {
-      Map tableSchema = (Map)schemas.get(i);
-      tableSchema.put("name", tableSchema.get("tableNamePrefix") + getDate(0));
-      api.createTable(tableSchema);
+    for (int i = 0; i < numDaysToInsert; i += 1) {
+      for (TableInfo info : Config.tables) {
+        info.name = info.tableNamePrefix + getDate(dateOffset);
+
+        api.insertTable(info);
+      }
+
+      dateOffset += 1;
     }
   }
 

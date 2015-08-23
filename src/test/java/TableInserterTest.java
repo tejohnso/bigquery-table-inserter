@@ -1,5 +1,6 @@
 package tejohnso.bigquery;
 
+import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -16,9 +17,11 @@ public class TableInserterTest {
   public void itCreatesTables() {
     MockTablesApi  mockApi = new MockTablesApi();
     TableInserter inserter = new TableInserter(mockApi);
-    inserter.insertTables(Config.config);
+    inserter.insertTables();
+    int numDays = Config.numberOfDays;
+    int numTables = Config.tables.size();
 
-    assertThat(mockApi.createTableCallCount, is(1));
-    assertTrue(Pattern.matches("events[0-9]{8}", mockApi.insertedTableName));
+    assertThat(mockApi.insertTableCallCount, is(numDays * numTables));
+    assertThat(Pattern.matches("events[0-9]{8}", mockApi.insertedTableName), is(true));
   }
 }

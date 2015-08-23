@@ -1,15 +1,33 @@
 {
   "includeCurrentDay": true,
   "numberOfDays": 3,
-  "tableSchemas": [
+  "tables": [
     {
-      "dataset": "Viewer_Events",
+      "projectId": "test_projectid1",
+      "dataset": "test_dataset1",
       "tableNamePrefix": "events",
       "fields": [
         {
-          "name": "event",
+          "name": "field1",
           "type": "string",
           "nullable": false
+        }
+      ]
+    },
+    {
+      "projectId": "test_projectid2",
+      "dataset": "test_dataset2",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "field2",
+          "type": "INTEGER",
+          "nullable": true
+        },
+        {
+          "name": "field3",
+          "type": "string",
+          "nullable": true
         }
       ]
     }
