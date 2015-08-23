@@ -22,6 +22,6 @@ public class TableInserterTest {
     int numTables = Config.tables.size();
 
     assertThat(mockApi.insertTableCallCount, is(numDays * numTables));
-    assertThat(Pattern.matches("events[0-9]{8}", mockApi.insertedTableName), is(true));
+    assertThat(Pattern.matches("prefix[0-9]{8}", mockApi.insertedTableName), is(true));
   }
 }

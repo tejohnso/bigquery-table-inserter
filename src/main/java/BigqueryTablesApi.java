@@ -4,20 +4,32 @@ import java.util.*;
 import java.io.IOException;
 import com.google.api.services.bigquery.*;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.services.bigquery.model.*;
+import java.util.logging.Logger;
+import com.google.api.client.http.HttpTransport;
 
 class BigqueryTablesApi implements TablesApi {
-  private AppIdentityCredential credential;
+  private GoogleCredential credential;
   private Bigquery bqClient;
+  private static final Logger log = Logger.getAnonymousLogger();
 
-  public BigqueryTablesApi() {
-    AppIdentityCredential credential =
-    new AppIdentityCredential(Arrays.asList(BigqueryScopes.BIGQUERY));
+  public BigqueryTablesApi(HttpTransport transport) {
+    try {
+      credential = GoogleCredential.getApplicationDefault();
+    } catch (IOException e) {
+      log.severe(e.getMessage());
+    }
+
+    if (credential == null || transport == null) {
+      log.severe("Could not initiate credential");
+      return;
+    }
+
+    credential = credential.createScoped(Arrays.asList(BigqueryScopes.BIGQUERY));
 
     bqClient = new Bigquery.Builder
-    (new UrlFetchTransport(), JacksonFactory.getDefaultInstance(), credential)
+    (transport, JacksonFactory.getDefaultInstance(), credential)
     .build();
   }
 
@@ -29,7 +41,7 @@ class BigqueryTablesApi implements TablesApi {
     try {
       bqClient.tables().insert(projectId, dataset, table).execute();
     } catch (IOException e) {
-      System.out.println(e);
+      log.severe("Could not create table " + e.getMessage());
     }
   }
 

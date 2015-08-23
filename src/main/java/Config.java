@@ -9,7 +9,7 @@ class Config {
   static final InputStream configFile = ClassLoader.getSystemResourceAsStream
   ("config.json");
 
-  static final Logger log = Logger.getAnonymousLogger();
+  private static final Logger log = Logger.getAnonymousLogger();
   static boolean includeCurrentDay;
   static int numberOfDays;
   static List<TableInfo> tables;

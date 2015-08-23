@@ -3,9 +3,9 @@
   "numberOfDays": 3,
   "tables": [
     {
-      "projectId": "test_projectid1",
-      "dataset": "test_dataset1",
-      "tableNamePrefix": "events",
+      "projectId": "project-id",
+      "dataset": "dataset",
+      "tableNamePrefix": "prefix",
       "fields": [
         {
           "name": "field1",
@@ -15,9 +15,9 @@
       ]
     },
     {
-      "projectId": "test_projectid2",
-      "dataset": "test_dataset2",
-      "tableNamePrefix": "events",
+      "projectId": "project-id",
+      "dataset": "dataset",
+      "tableNamePrefix": "prefix",
       "fields": [
         {
           "name": "field2",

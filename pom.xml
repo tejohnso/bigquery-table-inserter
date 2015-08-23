@@ -13,6 +13,7 @@
     <app.version>1</app.version>
     <appengine.version>1.9.25</appengine.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <prerequisites>
     <maven>3.1.0</maven>
@@ -33,7 +34,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev226-1.20.0</version>
+      <version>v2-rev227-1.20.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>
@@ -101,6 +102,11 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
+          <compilerArgs>
+            <arg>-Xlint</arg>
+          </compilerArgs>
+          <fork>true</fork>
+          <showWarnings>true</showWarnings>
         </configuration>
       </plugin>
       <plugin>
@@ -110,6 +116,19 @@
         <configuration>
           <argLine>-XX:MaxJavaStackTraceDepth=10</argLine>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.18.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

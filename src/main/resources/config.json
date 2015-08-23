@@ -3,12 +3,12 @@
   "numberOfDays": 3,
   "tables": [
     {
-      "projectId": "client-side-events",
-      "dataset": "Viewer_Events",
-      "tableNamePrefix": "events",
+      "projectId": "project-id",
+      "dataset": "dataset",
+      "tableNamePrefix": "prefix",
       "fields": [
         {
-          "name": "event",
+          "name": "field1",
           "type": "string",
           "nullable": false
         }
