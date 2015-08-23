@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.logging.Logger;
 
 class ConfigLoader {
-  static final InputStream configFileStream = ClassLoader.getSystemResourceAsStream
+  static final InputStream configFileStream = ConfigLoader.class.getClassLoader().getResourceAsStream
   ("config.json");
 
   static final InputStreamReader reader = new InputStreamReader(configFileStream);
