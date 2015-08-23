@@ -10,8 +10,7 @@
 
   <properties>
     <app.id>bigquery-table-generator</app.id>
-    <app.version>1</app.version>
-    <appengine.version>1.9.25</appengine.version>
+    <appengine.sdk.version>1.9.25</appengine.sdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -23,7 +22,7 @@
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine.sdk.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
@@ -48,13 +47,13 @@
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-testing</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine.sdk.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-stubs</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine.sdk.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -134,9 +133,9 @@
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>${appengine.version}</version>
+        <version>${appengine.sdk.version}</version>
         <configuration>
-          <version>${app.version}</version>
+          <version>${deploy.version}</version>
         </configuration>
       </plugin>
     </plugins>
