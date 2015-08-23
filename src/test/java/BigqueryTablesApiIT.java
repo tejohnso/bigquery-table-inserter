@@ -11,7 +11,7 @@ public class BigqueryTablesApiIT {
     BigqueryTablesApi api = new BigqueryTablesApi(new NetHttpTransport());
     assertThat(api, isA(BigqueryTablesApi.class));
 
-    TableInfo tableInfo = Config.tables.get(0);
+    Config.TableInfo tableInfo = ConfigLoader.getConfig().tables.get(0);
     tableInfo.name = "test_table";
     api.insertTable(tableInfo);
   }

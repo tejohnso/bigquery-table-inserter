@@ -33,7 +33,7 @@ class BigqueryTablesApi implements TablesApi {
     .build();
   }
 
-  public void insertTable(TableInfo tableInfo) {
+  public void insertTable(Config.TableInfo tableInfo) {
     String projectId = tableInfo.projectId;
     String dataset = tableInfo.dataset;
     Table table = assembleTable(tableInfo);
@@ -45,7 +45,7 @@ class BigqueryTablesApi implements TablesApi {
     }
   }
 
-  Table assembleTable(TableInfo tableInfo) {
+  Table assembleTable(Config.TableInfo tableInfo) {
     TableReference ref = new TableReference();
     ref.setTableId(tableInfo.name);
     ref.setProjectId(tableInfo.projectId);
@@ -53,7 +53,7 @@ class BigqueryTablesApi implements TablesApi {
 
     TableSchema schema = new TableSchema();
     List<TableFieldSchema> fields = new ArrayList<>();
-    for (TableField field : tableInfo.fields) {
+    for (Config.TableField field : tableInfo.fields) {
       TableFieldSchema fieldSchema = new TableFieldSchema();
       fieldSchema.setMode(field.nullable ? "NULLABLE" : "REQUIRED");
       fieldSchema.setName(field.name);

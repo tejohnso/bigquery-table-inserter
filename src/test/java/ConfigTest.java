@@ -12,6 +12,6 @@ public class ConfigTest {
 
   @Test
   public void itLoadsConfig() {
-    assertThat(Config.tables.size() > 0, is(true));
+    assertThat(ConfigLoader.getConfig().tables.size() > 0, is(true));
   }
 }

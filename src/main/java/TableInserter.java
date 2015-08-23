@@ -10,11 +10,12 @@ class TableInserter {
   }
 
   public void insertTables() {
-    int dateOffset = Config.includeCurrentDay ? 0 : 1;
-    int numDaysToInsert = Config.numberOfDays;
+    Config config = ConfigLoader.getConfig();
+    int dateOffset = config.includeCurrentDay ? 0 : 1;
+    int numDaysToInsert = config.numberOfDays;
 
     for (int i = 0; i < numDaysToInsert; i += 1) {
-      for (TableInfo info : Config.tables) {
+      for (Config.TableInfo info : config.tables) {
         info.name = info.tableNamePrefix + getDate(dateOffset);
 
         api.insertTable(info);
