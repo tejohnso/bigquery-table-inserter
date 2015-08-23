@@ -1,9 +1,0 @@
-{
-  "credentials": {
-    "ubuntu": {
-      "access_token": "GOOGLE_ACCESS_TOKEN",
-      "expiration_time_millis": 2431552739090,
-      "refresh_token": "GOOGLE_REFRESH_TOKEN"
-    }
-  }
-}
