@@ -1,11 +1,12 @@
 ## Bigquery table generator
 
-Creates one or more tables every day as specified by the configuration file
+Creates one or more tables every day as specified by the configuration file.
+
 Table names will be of the format [tableNamePrefix]YYYYMMDD
 
 ### Configuration
 
-The configuration file `(src/main/resources/config.json)` specifies one or more table schemas each having one or more fields
+The configuration file `(src/main/resources/config.json)` specifies one or more table schemas ,each having one or more fields:
 
 ```json
 {
@@ -47,6 +48,5 @@ mvn test
 
 ```bash
 mvn verify
-
-Note: Requires a json service account file.  The file should be specified by the environment variable *GOOGLE_APPLICATION_CREDENTIALS*
 ```
+Note: Requires a json service account file.  The file path should be specified by the environment variable *GOOGLE_APPLICATION_CREDENTIALS*
