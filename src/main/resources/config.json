@@ -3,13 +3,122 @@
   "numberOfDays": 3,
   "tables": [
     {
-      "projectId": "project-id",
-      "dataset": "dataset",
-      "tableNamePrefix": "prefix",
+      "projectId": "client-side-events",
+      "dataset": "CAP_Events",
+      "tableNamePrefix": "events",
       "fields": [
         {
-          "name": "field1",
+          "name": "event",
           "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "display_id",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "chrome_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "os",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ip",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "cap_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "time_millis",
+          "type": "INTEGER",
+          "nullable": true
+        },
+        {
+          "name": "ts",
+          "type": "TIMESTAMP",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "projectId": "client-side-events",
+      "dataset": "OLP_Events",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "display_id",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "chrome_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "os",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ip",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "olp_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ts",
+          "type": "TIMESTAMP",
+          "nullable": false
+        }
+      ]
+    },
+    {
+      "projectId": "client-side-events",
+      "dataset": "Viewer_Events",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "event_details",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "display_id",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "viewer_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ts",
+          "type": "TIMESTAMP",
           "nullable": false
         }
       ]

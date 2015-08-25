@@ -1,0 +1,17 @@
+dependencies:
+  post:
+    - git clone git@github.com:Rise-Vision/private-keys.git
+
+test:
+  override:
+    - GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/private-keys/client-side-events/service-acct-2deb606013f0.json mvn test
+
+deployment:
+  staging:
+    branch: /(feature|fix|chore).*/
+    commands:
+      - echo "nothing to deploy on staging branch"
+  production:
+    branch: master
+    commands:
+      - mvn appengine:update -Dappengine.appId=client-side-events -Ddeploy.version=$CIRCLE_BUILD_NUM -Ddeploy.module=default
