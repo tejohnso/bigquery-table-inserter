@@ -1,8 +1,8 @@
-## Bigquery table generator
+## Client side events table generator
 
-Creates one or more tables every day as specified by the configuration file.
+Creates daily tables for client side events project.
 
-Table names will be of the format [tableNamePrefix]YYYYMMDD
+Table names will be of the format [tableNamePrefix]YYYYMMDD for use in table date range queries.
 
 ### Configuration
 
