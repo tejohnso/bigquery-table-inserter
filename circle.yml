@@ -1,3 +1,11 @@
+dependencies:
+  post:
+    - git clone git@github.com:Rise-Vision/private-keys.git
+
+test:
+  override:
+    - mvn test
+
 deployment:
   staging:
     branch: /(feature|fix|chore).*/
@@ -6,4 +14,7 @@ deployment:
   production:
     branch: master
     commands:
-      - mvn appengine:update -Dappengine.appId=client-side-events -Ddeploy.version=$CIRCLE_BUILD_NUM -Ddeploy.module=default
+      - cp private-keys/client-side-events/.appcfg_oauth2_tokens_java ~/
+      - mvn appengine:update -DskipTests -Dappengine.appId=client-side-events -Ddeploy.version=$CIRCLE_BUILD_NUM -Ddeploy.module=default
+      - mvn appengine:set_default_version -DskipTests -Ddeploy.version=$CIRCLE_BUILD_NUM -Dappengine.appId=client-side-events -Ddeploy.module=default
+
