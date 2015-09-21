@@ -122,6 +122,53 @@
           "nullable": false
         }
       ]
+    },
+    {
+      "projectId": "client-side-events",
+      "dataset": "Native_Events",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "event_details",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "display_id",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ip",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "os",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "chrome_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "player_version",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ts",
+          "type": "TIMESTAMP",
+          "nullable": false
+        }
+      ]
     }
   ]
 }
