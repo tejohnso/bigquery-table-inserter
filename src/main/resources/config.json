@@ -169,6 +169,33 @@
           "nullable": false
         }
       ]
+    },
+    {
+      "projectId": "client-side-events",
+      "dataset": "Widget_Events",
+      "tableNamePrefix": "events",
+      "fields": [
+        {
+          "name": "event",
+          "type": "string",
+          "nullable": false
+        },
+        {
+          "name": "event_details",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "display_id",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "ts",
+          "type": "TIMESTAMP",
+          "nullable": false
+        }
+      ]
     }
   ]
 }
