@@ -191,6 +191,11 @@
           "nullable": true
         },
         {
+          "name": "widget",
+          "type": "string",
+          "nullable": false
+        },
+        {
           "name": "ts",
           "type": "TIMESTAMP",
           "nullable": false
