@@ -173,7 +173,7 @@
     {
       "projectId": "client-side-events",
       "dataset": "Widget_Events",
-      "tableNamePrefix": "events",
+      "tableNamePrefix": "video_events",
       "fields": [
         {
           "name": "event",
@@ -191,9 +191,24 @@
           "nullable": true
         },
         {
-          "name": "widget",
+          "name": "company_id",
           "type": "string",
-          "nullable": false
+          "nullable": true
+        },
+        {
+          "name": "file_name",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "file_format",
+          "type": "string",
+          "nullable": true
+        },
+        {
+          "name": "file_size",
+          "type": "string",
+          "nullable": true
         },
         {
           "name": "ts",
