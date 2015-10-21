@@ -196,6 +196,11 @@
           "nullable": true
         },
         {
+          "name": "file_url",
+          "type": "string",
+          "nullable": true
+        },
+        {
           "name": "file_name",
           "type": "string",
           "nullable": true
