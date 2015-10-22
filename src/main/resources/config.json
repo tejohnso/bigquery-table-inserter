@@ -201,17 +201,7 @@
           "nullable": true
         },
         {
-          "name": "file_name",
-          "type": "string",
-          "nullable": true
-        },
-        {
           "name": "file_format",
-          "type": "string",
-          "nullable": true
-        },
-        {
-          "name": "file_size",
           "type": "string",
           "nullable": true
         },
