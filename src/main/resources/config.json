@@ -211,11 +211,6 @@
           "nullable": true
         },
         {
-          "name": "file_size",
-          "type": "string",
-          "nullable": true
-        },
-        {
           "name": "ts",
           "type": "TIMESTAMP",
           "nullable": false
