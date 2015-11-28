@@ -2,11 +2,11 @@
 
 Creates one or more tables every day as specified by the configuration file.
 
-Table names will be of the format [tableNamePrefix]YYYYMMDD
+Table names will be of the format [tableNamePrefix]YYYYMMDD for use in [Table Wildcard Functions](https://cloud.google.com/bigquery/query-reference?hl=en#tablewildcardfunctions).
 
 ### Configuration
 
-The configuration file `(src/main/resources/config.json)` specifies one or more table schemas ,each having one or more fields:
+The configuration file `(src/main/resources/config.json)` specifies one or more table schemas, each having one or more fields:
 
 ```json
 {
