@@ -218,6 +218,11 @@
       "tableNamePrefix": "video_memory_usage",
       "fields": [
         {
+          "name": "display_id",
+          "type": "string",
+          "nullable": false
+        },
+        {
           "name": "js_heap_size_limit",
           "type": "INTEGER",
           "nullable": false
