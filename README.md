@@ -2,6 +2,8 @@
 
 Creates one or more tables every day as specified by the configuration file.
 
+Note that this is less useful now that Bigquery provides a way to [automatically create tables during streaming inserts](https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables).
+
 Table names will be of the format [tableNamePrefix]YYYYMMDD for use in [Table Wildcard Functions](https://cloud.google.com/bigquery/query-reference?hl=en#tablewildcardfunctions).
 
 ### Configuration
